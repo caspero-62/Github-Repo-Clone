@@ -61,7 +61,7 @@ export const queryData = (username) => `{
   
 export const API_URL = 'https://api.github.com/graphql';
 
-const token = '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';
+const token = process.env?.REACT_APP_API_TOKEN ?? '';
   
 export const queryOptions = (username) => ({
   method: "POST",
