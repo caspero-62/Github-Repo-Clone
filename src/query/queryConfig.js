@@ -61,12 +61,12 @@ export const queryData = (username) => `{
   
 export const API_URL = 'https://api.github.com/graphql';
 
-console.log(process.env, process.env.API_TOKEN);
+const token = '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';
   
 export const queryOptions = (username) => ({
   method: "POST",
   headers: {
-    "Authorization": `bearer ${process.env?.API_TOKEN ?? ''}`,
+    "Authorization": `bearer ${token}`,
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
