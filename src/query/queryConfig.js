@@ -65,7 +65,7 @@ export const API_URL = 'https://api.github.com/graphql';
 
 export const token = process.env.NODE_ENV === 'production' ? TOKEN : TOKEN;
 
-console.log(process.env.NODE_ENV, token);
+console.log(process.env);
   
 export const queryOptions = (username) => ({
   method: "POST",
