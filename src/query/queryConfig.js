@@ -1,5 +1,3 @@
-const { TOKEN } = process.env;
-
 export const queryData = (username) => `{
     user(login: "${username.toString()}") {
       avatarUrl
@@ -62,15 +60,11 @@ export const queryData = (username) => `{
   }`;
   
 export const API_URL = 'https://api.github.com/graphql';
-
-export const token = process.env.NODE_ENV === 'production' ? TOKEN : TOKEN;
-
-console.log(process.env);
   
 export const queryOptions = (username) => ({
   method: "POST",
   headers: {
-    "Authorization": `bearer ${token}`,
+    "Authorization": `bearer ${process.env?.TOKEN ?? ''}`,
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
