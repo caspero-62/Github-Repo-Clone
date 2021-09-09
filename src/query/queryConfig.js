@@ -60,11 +60,13 @@ export const queryData = (username) => `{
   }`;
   
 export const API_URL = 'https://api.github.com/graphql';
+
+console.log(process.env);
   
 export const queryOptions = (username) => ({
   method: "POST",
   headers: {
-    "Authorization": `bearer ${process.env?.TOKEN ?? ''}`,
+    "Authorization": `bearer ${process.env?.API_TOKEN ?? ''}`,
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
