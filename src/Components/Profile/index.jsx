@@ -25,7 +25,7 @@ const Profile = ({ profileData }) => {
                 {status && (
                     <div className="status-emoji">
                         <span className="emoji">
-                            {parse(status.emojiHTML)}
+                            {status.emojiHTML && parse(status.emojiHTML)}
                         </span>
                         <span className="edit-status"><Link to="##">&nbsp; {status.message ?? 'Edit status'}</Link></span>
                     </div>
@@ -51,7 +51,7 @@ const Profile = ({ profileData }) => {
 
                 {status && (
                     <div className="status-emoji normal">
-                        {parse(status.emojiHTML)}
+                        {status.emojiHTML && parse(status.emojiHTML)}
                         <span><Link to="##">Edit status</Link></span>
                     </div>
                 )}
